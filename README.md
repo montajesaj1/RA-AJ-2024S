@@ -41,6 +41,8 @@ updated_molecule = pattern3.sub(r'\1 \2', updated_molecule)
 
 e.g. 1-2-PROPANEDIOL_DIACETATE $\rightarrow$ 1,2 PROPANEDIOL DIACETATE
 
+This parser was applied to the entire initial list of molecules [data.xlsx] and the results are stored as an array of strings. I then implemented a scraper which given a parsed molecule name, generates a PubChem query url string `f'https://pubchem.ncbi.nlm.nih.gov/#query={chemical}'` and extracts the **featured** link from the PubChem search results.
+
 <br>
 
 # InXight Data Collection
