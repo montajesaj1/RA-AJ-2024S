@@ -41,7 +41,19 @@ updated_molecule = pattern3.sub(r'\1 \2', updated_molecule)
 
 e.g. 1-2-PROPANEDIOL_DIACETATE $\rightarrow$ 1,2 PROPANEDIOL DIACETATE
 
-This parser was applied to the entire initial list of molecules [data.xlsx] and the results are stored as an array of strings. I then implemented a scraper which given a parsed molecule name, generates a PubChem query url string `f'https://pubchem.ncbi.nlm.nih.gov/#query={chemical}'` and extracts the **featured** link from the PubChem search results.
+This parser was applied to the entire initial list of molecules [data.xlsx] and the results are stored as an array of strings. I then implemented a Selenium-based web-scraper which given a parsed molecule name, generates a PubChem query url string `f'https://pubchem.ncbi.nlm.nih.gov/#query={chemical}'` and extracts the **top** link from the PubChem search results. The scraper also flags whether the top link is a [featured] or simply the most [relevant]. This implementation outputs a two-column dataframe: `Link, Result Type`, I add back the original molecule name and parsed molecule name to the dataframe: `Molecule, Parsed, Link, Result Type`.
+
+Given the new column of relevant/featured links, I begin collecting our desired data from each link. I achieved this with a new Selenium web-scraper, which identifies both CAS and Deprecated CAS HTML elements and stores them in a dictionary. I then convert the dictionary into a two-column dataframe: `CAS, Deprecated CAS` and combine it with our previous dataframe.
+
+I was then tasked to flag whether or not a molecule was a compound or a substance. I realized that this can be easily identified through the 'top' link for each molecule.
+
+e.g. https://pubchem.ncbi.nlm.nih.gov/**compound**/12198
+
+Using a lambda function, I added a new column: `Compound/Substance` which identifies whether or not the top link is a compound or substance.
+
+```
+final_df['Compound/Substance'] = final_df['Link'].apply(lambda x: 'COMPOUND' if 'compound' in str(x) else ('SUBSTANCE' if 'substance' in str(x) else 'N/A'))
+```
 
 <br>
 
