@@ -55,6 +55,8 @@ Using a lambda function, I added a new column: `Compound/Substance` which identi
 final_df['Compound/Substance'] = final_df['Link'].apply(lambda x: 'COMPOUND' if 'compound' in str(x) else ('SUBSTANCE' if 'substance' in str(x) else 'N/A'))
 ```
 
+Finally, I exported this as a scraped_pubchem_data_final.csv and uploaded it to the SharePoint.
+
 <br>
 
 # InXight Data Collection
