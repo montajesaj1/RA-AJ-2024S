@@ -69,14 +69,5 @@ AJ WLIURA 2024S
 ├── PubChem Scraper 
 ├── archive
 ├── iqvia_to_cortellis_match_by_cas
-│   ├── config
-│   │   ├── autocmds.lua
-│   │   ├── keymaps.lua
-│   │   ├── lazy.lua
-│   │   └── options.lua
-│   └── plugins
-│       ├── spec1.lua
-│       ├── **
-│       └── spec2.lua
 └── README.md (you are here)
 </pre>
