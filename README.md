@@ -2,14 +2,14 @@
 
 <br>
 
-## PubChem Data Collection
+# PubChem Data Collection
 
-### Goals
+## Goals
 
 - Given a list of molecule names, scrape PubChem and collect data `CAS, Deprecated CAS, Type (Compound/Substance)`.
 - Flag whether or not the name we queried is contained within the link returned.
 
-### Libraries/Dependencies
+## Libraries/Dependencies
 
 - Selenium, re (regex), pandas, csv.
 
@@ -43,7 +43,7 @@ e.g. 1-2-PROPANEDIOL_DIACETATE => 1,2 PROPANEDIOL DIACETATE
 
 <br>
 
-## InXight Data Collection
+# InXight Data Collection
 
 <br>
 
