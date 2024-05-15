@@ -35,6 +35,10 @@ updated_molecule = pattern2.sub(r' ', updated_molecule)
 updated_molecule = pattern3.sub(r'\1 \2', updated_molecule)
 ```
 
+- pattern: This substitution replaces any occurrence of a digit followed by a hyphen followed by another digit with the same digits separated by a comma. For example, it transforms 'H2-He3' to 'H2,He3'.
+- pattern2: Substitutes any underscores in the updated_molecule string with a space character.
+- pattern3: This substitution replaces any occurrence of a digit followed by a hyphen followed by an alphabet letter with the same digits separated by a space. For example, it transforms 'O2-Na' to 'O2 Na'.
+
 e.g. 1-2-PROPANEDIOL_DIACETATE => 1,2 PROPANEDIOL DIACETATE
 
 <br>
