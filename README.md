@@ -16,9 +16,21 @@
 - pandas
 - csv
 
-### Steps/Rationale
-
 The collection of PubChem data was conducted by the RA AJ Montajes _myself_ (UBC) in March 2024 under the supervision of Dr. Khmelnitskaya.
+
+The first issue to address was the formatting of molecule names in the original list of molecules [data.xlsx]. This was resolved through a parser implemented with the `re` library.
+
+```
+pattern = re.compile(r'(\d)-(\d)')
+pattern2 = re.compile(r'_')
+pattern3 = re.compile(r'(\d)-([a-zA-Z])')
+```
+
+Three regular expression patterns are compiled:
+
+- pattern: Matches a digit followed by a hyphen followed by another digit.
+- pattern2: Matches an underscore.
+- pattern3: Matches a digit followed by a hyphen followed by an alphabet letter.
 
 <br>
 
