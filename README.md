@@ -47,7 +47,7 @@ Given the new column of relevant/featured links, I begin collecting our desired 
 
 I was then tasked to flag whether or not a molecule was a compound or a substance. I realized that this can be easily identified through the 'top' link for each molecule.
 
-e.g. https://pubchem.ncbi.nlm.nih.gov/**compound**/12198
+e.g. 'https://pubchem.ncbi.nlm.nih.gov/**compound**/12198'
 
 Using a lambda function, I added a new column: `Compound/Substance` which identifies whether or not the top link is a compound or substance.
 
